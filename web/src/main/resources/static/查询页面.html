@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>云南供应链系统</title>
+		<link rel="stylesheet" href="css/common.css" />
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+		<!--[if lt IE 9]>
+<script src="https://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+<![endif]-->
+<script>
+	$(function(){
+		$(window).scroll(function(){
+			if($(window).scrollTop()>100){
+				$("#side-bar .gotop").fadeIn();	
+				$(".bottom_fanye").fadeIn();
+				$(".table-top").fadeIn();
+				$("#fy").hide();
+				
+			}
+			else{
+				$("#side-bar .gotop").hide();
+				$(".bottom_fanye").hide();
+				$(".table-top").hide();
+			}
+		});
+		$("#side-bar .gotop").click(function(){
+			$('html,body').animate({'scrollTop':0},500);
+		});
+		
+		$("#search-tr").siblings().addClass("uhide");
+		
+		$("#zk").click(function(){						
+			sun=document.getElementById("kg");			
+			if(sun.src.match("down")){
+	        sun.src="img/icon-up.png";
+	        $("#search-tr").siblings().show();
+	        }
+         else{
+	     sun.src="img/icon-down.png";
+	     $("#search-tr").siblings().hide();
+	         }	
+			
+		});
+	});
+</script>
+	</head>
+	<body >
+		<div class="content" >
+			<div class="cont-menu">
+			 <p>当前位置：<a href="#">首页 > </a><a href="#">采购管理 > </a><a href="#"><span class="loc">采购项目</span></a></p>
+		</div>	
+		<div class="cont-white" style="padding-bottom: 40px;" >
+				<div class="title2">
+					<div class="fr mr10">
+						<a href="#"><img src="img/icon-add.png" />新增</a>
+						<a href="#"><img src="img/icon-del-all.png" />删除</a>
+							<a href="#"><img src="img/icon-input.png" />导入</a>
+						<a href="#"><img src="img/icon-sx.png" />刷新</a>
+					</div>
+					<h3>采购项目</h3>
+				</div>
+				<div class="search_box">
+					  <table width="100%" border="0"  cellpadding="0" cellspacing="0">
+			  	<tr>
+			  		<td width="82%">
+			  			  <table width="100%"  cellpadding="0" cellspacing="0" class="search_table">
+			  	<tr id="search-tr">
+			  		<th width="15%">请购名称请购名称：</th>
+			  		<td width="35%"><input type="text" value="" name="" class="input1"/></td>
+			  		<th width="15%">请购编号：</th>
+			  		<td width="35%"><select class="select1"></select></td>
+			  	</tr>
+			  	<tr>
+			  		<th>测试标题：</th>
+			  		<td><select class="select1"></select></td>
+			  		<th>测试标题：</th>
+			  		<td><input type="text" value="" name="" class="input1"/></td>
+			  	</tr>
+			  	
+			  </table>
+		
+			  		</td>			  		
+			      <td width="14%" valign="top" ><div class="search_btn"><button type="submit" class="active">查询</button><button type="submit">重置</button></div>
+			      	</td>
+			  		<td width="18%" valign="top"  id="zk"><img src="img/icon-down.png"  id="kg" /></td>
+			  	</tr>
+			  	
+			  </table>
+		
+			
+				</div>
+<div class="table-top uhide" >
+  <table width="100%"  cellpadding="0" cellspacing="0" class="list_table">
+						<tr>
+							<th width="20"><input type="checkbox"/></th>
+							<th width="40">序号</th>
+							<th>请购名称</th>
+							<th>请购编号</th>
+							<th>请购单位</th>							
+							<th>创建日期</th>
+							<th>创建人</th>
+							<th>流程状态</th>
+							<th width="80">操作</th>
+							
+						</tr>
+						
+					</table>
+	</div>			
+<div class="mt10">
+			
+			<table width="100%"  cellpadding="0" cellspacing="0" class="list_table">
+						<tr>
+							<th width="20"><input type="checkbox"/></th>
+							<th width="40">序号</th>
+							<th>请购名称</th>
+							<th>请购编号</th>
+							<th>请购单位</th>							
+							<th>创建日期</th>
+							<th>创建人</th>
+							<th>流程状态</th>
+							<th width="80">操作</th>
+							
+						</tr>
+						<tr>
+							<td><input type="checkbox"/></td>
+							<td>1</td>
+							<td><a href="编辑页面.html">请购名称测试文字</a></td>
+							<td>QC(2017)0022</td>
+							<td>省公司</td>
+							<td>2017/09/07 15:00:00</td>
+							<td>admin</td>	
+							<td></td>
+							<td><a><img src="img/icon-search.png" title="查看 "/></a></td>
+						</tr>
+							<tr>
+								<td><input type="checkbox"/></td>
+							<td>2</td>
+							<td><a>请购名称测试文字</a></td>
+							<td>QC(2017)0022</td>
+							<td>省公司</td>
+							<td>2017/09/07 15:00:00</td>
+							<td>admin</td>	
+							<td>草稿</td>
+							<td><a><img src="img/icon-edit.png"  title="处理 "/></a>
+								<a><img src="img/icon-del-all.png"  title="删除 "/></a>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"/></td>
+							<td>3</td>
+							<td><a>请购名称测试文字</a></td>
+							<td>QC(2017)0022</td>
+							<td>省公司</td>
+							<td>2017/09/07 15:00:00</td>
+							<td>admin</td>	
+							<td></td>
+							<td><a><img src="img/icon-search.png" title="查看 "/></a></td>
+						</tr>
+							<tr>
+								<td><input type="checkbox"/></td>
+							<td>4</td>
+							<td><a>请购名称测试文字</a></td>
+							<td>QC(2017)0022</td>
+							<td>省公司</td>
+							<td>2017/09/07 15:00:00</td>
+							<td>admin</td>	
+							<td>草稿</td>
+							<td><a><img src="img/icon-edit.png"  title="处理 "/></a>
+								<a><img src="img/icon-del-all.png"  title="删除 "/></a>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"/></td>
+							<td>5</td>
+							<td><a>请购名称测试文字</a></td>
+							<td>QC(2017)0022</td>
+							<td>省公司</td>
+							<td>2017/09/07 15:00:00</td>
+							<td>admin</td>	
+							<td>草稿</td>
+							<td><a><img src="img/icon-edit.png"  title="处理 "/></a>
+								<a><img src="img/icon-del-all.png"  title="删除 "/></a>
+							</td>
+						</tr>
+							<tr>
+								<td><input type="checkbox"/></td>
+							<td>6</td>
+							<td><a>请购名称测试文字</a></td>
+							<td>QC(2017)0022</td>
+							<td>省公司</td>
+							<td>2017/09/07 15:00:00</td>
+							<td>admin</td>	
+							<td>草稿</td>
+							<td><a><img src="img/icon-edit.png"  title="处理 "/></a>
+								<a><img src="img/icon-del-all.png"  title="删除 "/></a>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"/></td>
+							<td>7</td>
+							<td><a>请购名称测试文字</a></td>
+							<td>QC(2017)0022</td>
+							<td>省公司</td>
+							<td>2017/09/07 15:00:00</td>
+							<td>admin</td>	
+							<td></td>
+							<td><a><img src="img/icon-search.png" title="查看 "/></a></td>
+						</tr>
+							<tr>
+								<td><input type="checkbox"/></td>
+							<td>8</td>
+							<td><a>请购名称测试文字</a></td>
+							<td>QC(2017)0022</td>
+							<td>省公司</td>
+							<td>2017/09/07 15:00:00</td>
+							<td>admin</td>	
+							<td>草稿</td>
+							<td><a><img src="img/icon-edit.png"  title="处理 "/></a>
+								<a><img src="img/icon-del-all.png"  title="删除 "/></a>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"/></td>
+							<td>9</td>
+							<td><a>请购名称测试文字</a></td>
+							<td>QC(2017)0022</td>
+							<td>省公司</td>
+							<td>2017/09/07 15:00:00</td>
+							<td>admin</td>	
+							<td></td>
+							<td><a><img src="img/icon-search.png" title="查看 "/></a></td>
+						</tr>
+							<tr>
+								<td><input type="checkbox"/></td>
+							<td>10</td>
+							<td><a>请购名称测试文字</a></td>
+							<td>QC(2017)0022</td>
+							<td>省公司</td>
+							<td>2017/09/07 15:00:00</td>
+							<td>admin</td>	
+							<td>草稿</td>
+							<td><a><img src="img/icon-edit.png"  title="处理 "/></a>
+								<a><img src="img/icon-del-all.png"  title="删除 "/></a>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"/></td>
+							<td>11</td>
+							<td><a>请购名称测试文字</a></td>
+							<td>QC(2017)0022</td>
+							<td>省公司</td>
+							<td>2017/09/07 15:00:00</td>
+							<td>admin</td>	
+							<td>草稿</td>
+							<td><a><img src="img/icon-edit.png"  title="处理 "/></a>
+								<a><img src="img/icon-del-all.png"  title="删除 "/></a>
+							</td>
+						</tr>
+							<tr>
+								<td><input type="checkbox"/></td>
+							<td>12</td>
+							<td><a>请购名称测试文字</a></td>
+							<td>QC(2017)0022</td>
+							<td>省公司</td>
+							<td>2017/09/07 15:00:00</td>
+							<td>admin</td>	
+							<td>草稿</td>
+							<td><a><img src="img/icon-edit.png"  title="处理 "/></a>
+								<a><img src="img/icon-del-all.png"  title="删除 "/></a>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"/></td>
+							<td>13</td>
+							<td><a>请购名称测试文字</a></td>
+							<td>QC(2017)0022</td>
+							<td>省公司</td>
+							<td>2017/09/07 15:00:00</td>
+							<td>admin</td>	
+							<td></td>
+							<td><a><img src="img/icon-search.png" title="查看 "/></a></td>
+						</tr>
+							<tr>
+								<td><input type="checkbox"/></td>
+							<td>14</td>
+							<td><a>请购名称测试文字</a></td>
+							<td>QC(2017)0022</td>
+							<td>省公司</td>
+							<td>2017/09/07 15:00:00</td>
+							<td>admin</td>	
+							<td>草稿</td>
+							<td><a><img src="img/icon-edit.png"  title="处理 "/></a>
+								<a><img src="img/icon-del-all.png"  title="删除 "/></a>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"/></td>
+							<td>15</td>
+							<td><a>请购名称测试文字</a></td>
+							<td>QC(2017)0022</td>
+							<td>省公司</td>
+							<td>2017/09/07 15:00:00</td>
+							<td>admin</td>	
+							<td></td>
+							<td><a><img src="img/icon-search.png" title="查看 "/></a></td>
+						</tr>
+							<tr>
+								<td><input type="checkbox"/></td>
+							<td>16</td>
+							<td><a>请购名称测试文字</a></td>
+							<td>QC(2017)0022</td>
+							<td>省公司</td>
+							<td>2017/09/07 15:00:00</td>
+							<td>admin</td>	
+							<td>草稿</td>
+							<td><a><img src="img/icon-edit.png"  title="处理 "/></a>
+								<a><img src="img/icon-del-all.png"  title="删除 "/></a>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"/></td>
+							<td>17</td>
+							<td><a>请购名称测试文字</a></td>
+							<td>QC(2017)0022</td>
+							<td>省公司</td>
+							<td>2017/09/07 15:00:00</td>
+							<td>admin</td>	
+							<td>草稿</td>
+							<td><a><img src="img/icon-edit.png"  title="处理 "/></a>
+								<a><img src="img/icon-del-all.png"  title="删除 "/></a>
+							</td>
+						</tr>
+							<tr>
+								<td><input type="checkbox"/></td>
+							<td>18</td>
+							<td><a>请购名称测试文字</a></td>
+							<td>QC(2017)0022</td>
+							<td>省公司</td>
+							<td>2017/09/07 15:00:00</td>
+							<td>admin</td>	
+							<td>草稿</td>
+							<td><a><img src="img/icon-edit.png"  title="处理 "/></a>
+								<a><img src="img/icon-del-all.png"  title="删除 "/></a>
+							</td>
+						</tr>
+					</table>
+					
+					 <div class="fanye" id="fy">	
+			        <ul>	
+                       	   <li><img src="img/fy-fist.png" title="首页" /> </li>	
+		                  <li><img src="img/fy-l.png"  title="上一页" /> </li>		                 
+			              <li> <img src="img/fy-r.png" title="下一页" /> </li>	
+			                <li> <img src="img/fy-last.png" title="末页" /> </li>	
+	                   </ul>
+	                   	 
+	                   <div class="fanye_text fr">	
+ <span> 共<b> 34 </b>条记录，</span>	                 
+		                                每页<select>
+		                        <option>5</option>
+		                         <option>10</option>
+		                          <option>15</option>
+		                           <option>200</option>
+		                      </select>条
+		                 
+		              <span>    <b>1</b>/<b>5</b></span>
+                       </div>
+                      
+                  </div> 				 
+			   
+				 </div>
+	
+		
+		</div></div>
+	<div class="bottom_fanye uhide">
+		 <div class="fanye">	
+		 	
+			        <ul>	
+                       	   <li><img src="img/fy-fist.png" title="首页" /> </li>	
+		                  <li><img src="img/fy-l.png"  title="上一页" /> </li>		                 
+			              <li> <img src="img/fy-r.png" title="下一页" /> </li>	
+			                <li> <img src="img/fy-last.png" title="末页" /> </li>	
+	                   </ul>
+	                   	 
+	                   <div class="fanye_text fr">	
+ <span> 共<b> 34 </b>条记录，</span>	                 
+		                                每页<select>
+		                        <option>5</option>
+		                         <option>10</option>
+		                          <option>15</option>
+		                           <option>200</option>
+		                      </select>条
+		                 
+		              <span>    <b>1</b>/<b>5</b></span>
+                       </div>
+                      
+                  </div> 				 
+			   
+	</div>
+	<ul id="side-bar">
+		<li  class="gotop uhide"   ><img src="img/icon_top.png"/></li>
+		 
+	</ul>
+	
+	</body>
+</html>

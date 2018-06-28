@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>云南供应链系统</title>
+		<link rel="stylesheet" href="css/common.css" />
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+		<!--[if lt IE 9]>
+<script src="https://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+<![endif]-->
+<script type="text/javascript">
+$(function(){	
+		
+	$("#map").mouseover(function(){	
+    	$("#menu-down").css({"display":"block"});
+    });	 //鼠标移上显示下拉   
+
+ $("#menu-down").mouseleave(function(){	
+	$(this).hide();//二级菜单默认隐藏
+  });	
+
+$("#iframe").height($(window).height()-110);
+
+})
+</script>
+
+
+	</head>
+	<body>
+	<header>
+		<img src="img/logo.png" />
+		<p><span><span class="mr10">2017年6月20日 星期一</span>    admin，您好！</span>			
+				<a class="bg-red" href="javascript:void(0);" onclick="exit()"><img src="img/icon-quit.png" />退出</a>
+				<a class="bg-purp"><img src="img/icon-help.png" />帮助</a>				
+				<a class="bg-green"><img src="img/icon-set.png" />设置</a>
+				<a class="bg-blue active" id="map"><img src="img/icon-map.png" />网站地图</a>
+			</p>
+		<nav>
+				<ul>
+               <li class="active"><a href="#">首页</a></li>     
+               <li><a href="#">需求管理</a>
+                      <ul>
+                          <li><a href="#">需求收集</a></li> 
+                   </ul>
+                </li>
+              <li><a href="#">请购管理</a>
+                      <ul>
+                          <li><a href="#">请购单查询</a> </li>                           
+                          <li><a href="#">请购单创建</a> </li>     
+                    </ul>
+                </li>
+               <li><a href="#">采购寻源</a>
+                      <ul>
+                          <li><a href="#">请购池</a></li>  
+                          <li><a href="#">采购项目及采购方案</a></li>  
+                           <li><a href="#">ES执行跟踪</a></li>  
+                            <li><a href="#">采购结果</a></li>  
+                             <li><a href="#">上会池</a></li>  
+                              <li><a href="#">合同管理</a></li>  
+                             
+                    </ul>
+                </li>
+                <li><a href="#">订单管理</a>
+                      <ul>
+                          <li><a href="#">供货需求单</a> </li>  
+                            <li><a href="#">订货单查询</a> </li>  
+                              <li><a href="#">订货单创建</a> </li>  
+                                <li><a href="#">订货单执行跟踪</a> </li>  
+                                 <li><a href="#">配额管理</a> </li>                          
+                    </ul>
+                </li>
+                <li><a href="#">发货管理</a>
+                      <ul>
+                          <li><a href="#">供货通知单</a> </li>  
+                            <li><a href="#">装箱单</a> </li>  
+                              <li><a href="#">发货单</a> </li>                                                      
+                    </ul>
+                </li>
+                    <li><a href="#">接收管理</a>
+                      <ul>
+                          <li><a href="#">成本物资接收</a> </li>  
+                            <li><a href="#">费用订单接收</a> </li>  
+                              <li><a href="#">直发现场接收</a> </li>                                                      
+                    </ul>
+                </li>
+                  <li><a href="#">库存管理</a>
+                      <ul>
+                          <li><a href="#">入库单</a> </li>  
+                            <li><a href="#">物资申领</a> </li>  
+                              <li><a href="#">出库单</a> </li> 
+                               <li><a href="#">项目物资转移</a> </li> 
+                                <li><a href="#">物资调拨</a> </li> 
+                                 <li><a href="#">物资公示</a> </li> 
+                                  <li><a href="#">工程转备件</a> </li> 
+                                   <li><a href="#">工程转报废</a> </li>
+                    </ul>
+                </li>
+                 <li><a href="#">结算管理</a>
+                      <ul>
+                          <li><a href="#">订货汇总单</a> </li>  
+                            <li><a href="#">到货证明</a> </li>  
+                              <li><a href="#">无质量问题证明</a> </li> 
+                               <li><a href="#">付款申请</a> </li> 
+                                <li><a href="#">结算单</a> </li>                               
+                    </ul>
+                </li>
+                 <li><a href="#">统计报表</a>
+                      <ul>
+                          <li><a href="#">采购项目</a> </li>  
+                            <li><a href="#">工程项目</a> </li>  
+                              <li><a href="#">产品管理</a> </li> 
+                               <li><a href="#">业务单据</a> </li>                                                            
+                    </ul>
+                </li>
+                 <li><a href="#">基础资料</a>
+                      <ul>
+                          <li><a href="#">仓库维护</a> </li>  
+                            <li><a href="#">区域维护</a> </li>  
+                              <li><a href="#">子库维护</a> </li> 
+                               <li><a href="#">子库权限</a> </li>  
+                                  <li><a href="#">供应商信息</a> </li>  
+                                     <li><a href="#">合同信息</a> </li>  
+                                        <li><a href="#">物料编码</a> </li> 
+                                         <li><a href="#">流程金额设置</a> </li>  
+                    </ul>
+                </li>
+                <li><a href="#">系统管理</a>
+                      <ul>
+                          <li><a href="#">人员账户</a> </li>  
+                            <li><a href="#">组织单位</a> </li>  
+                              <li><a href="#">角色维护</a> </li> 
+                               <li><a href="#">权限维护</a> </li>                                                            
+                    </ul>
+                </li>
+                </ul>
+			</nav>
+		
+			<div id="menu-down">
+				 <dl>
+				 	<dt><a href="#">需求管理</a></dt>
+			<dd><a href="#">需求收集</a></dd>			
+		</dl>
+		<dl>
+       <dt><a href="#">请购管理</a></dt>
+			<dd><a href="#">请购单查询</a></dd>
+            <dd><a href="#">请购单创建</a></dd>
+          
+		</dl>
+          <dl>    
+           <dt><a href="#">采购寻源</a></dt>
+			<dd><a href="#">请购池</a></dd>
+            <dd><a href="#">采购项目及采购方案</a></dd>
+          <dd><a href="#">ES执行跟踪</a></dd>
+           <dd><a href="#">采购结果</a></dd>
+           <dd><a href="#">上会池</a></dd>
+            <dd><a href="#">合同管理</a></dd>
+		</dl>
+		<dl>
+             <dt><a href="#">订单管理</a></dt>	
+             <dd><a href="#">供货需求单</a></dd>
+            <dd><a href="#">订货单查询</a></dd>
+          <dd><a href="#">订货单创建</a></dd>
+           <dd><a href="#">订货单执行跟踪</a></dd>
+           <dd><a href="#">配额管理</a></dd>
+		</dl>
+			<dl>
+             <dt><a href="#">发货管理</a></dt>	
+              <dd><a href="#">供货通知单</a></dd>
+            <dd><a href="#">装箱单</a></dd>
+          <dd><a href="#">发货单</a></dd>
+         
+		</dl>
+          <dl>
+               <dt><a href="#">接收管理</a></dt>		
+             <dd><a href="#">成本物资接收</a></dd>
+            <dd><a href="#">费用订单接收</a></dd>
+          <dd><a href="#">直发现场接收</a></dd>
+ 		</dl>
+		
+     <dl>
+               <dt><a href="#">库存管理</a></dt>		
+            	  <dd><a href="#">入库单</a></dd>
+            <dd><a href="#">物资申领</a></dd>
+          <dd><a href="#">出库单</a></dd>
+          <dd><a href="#">项目物资转移</a></dd>
+          <dd><a href="#">物资调拨</a></dd>
+          <dd><a href="#">物资公示</a></dd>
+          <dd><a href="#">工程转备件</a></dd>
+           <dd><a href="#">工程转报废</a></dd>
+ 		</dl>
+ 		<dl>
+               <dt><a href="#">结算管理</a></dt>		
+            	  <dd><a href="#">订货汇总单</a></dd>
+            <dd><a href="#">到货证明</a></dd>
+          <dd><a href="#">无质量问题证明</a></dd>
+          <dd><a href="#">付款申请</a></dd>
+          <dd><a href="#">结算单</a></dd>        
+ 		</dl>	
+ 		<dl>
+               <dt><a href="#">统计报表</a></dt>		
+            	  <dd><a href="#">采购项目</a></dd>
+            <dd><a href="#">工程项目</a></dd>
+          <dd><a href="#">产品管理</a></dd>
+          <dd><a href="#">业务单据</a></dd>            
+ 		</dl>
+ 		<dl>
+               <dt><a href="#">基础资料</a></dt>		
+            	  <dd><a href="#">仓库维护</a></dd>
+            <dd><a href="#">区域维护</a></dd>
+          <dd><a href="#">子库维护</a></dd>
+          <dd><a href="#">子库权限</a></dd>   
+            <dd><a href="#">供应商信息</a></dd>
+            <dd><a href="#">合同信息</a></dd>
+          <dd><a href="#">物料编码</a></dd>
+          <dd><a href="#">流程金额设置</a></dd>   
+ 		</dl>	
+ 		<dl>
+               <dt><a href="#">系统管理</a></dt>		
+            	  <dd><a href="#">人员账户</a></dd>
+            <dd><a href="#">组织单位</a></dd>
+          <dd><a href="#">角色维护</a></dd>
+          <dd><a href="#">权限维护</a></dd>            
+ 		</dl>
+ 			</div>
+			
+	</header>	
+	
+	<div class="content_box">
+	<iframe src="查询页面2.html" width="100%"  frameborder="0" framespacing="0"  scrolling="Yes"  id="iframe"></iframe>
+	</div>
+	<footer><span class="mr10"><b>版权所有：</b>中国移动通信集团云南有限公司</span>    <b>技术支持：</b>热线电话 028-8666666</footer>
+	</body>
+    <script>
+
+
+    </script>
+</html>

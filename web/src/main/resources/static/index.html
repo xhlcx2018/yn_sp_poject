@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+		<title>云南供应链系统</title>
+		<link rel="stylesheet" href="css/common.css" />
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+		<!--[if lt IE 9]>
+<script src="https://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+<![endif]-->
+<script type="text/javascript">
+$(function(){	
+		
+	$("#map").mouseover(function(){	
+    	$("#menu-down").css({"display":"block"});
+    });	 //鼠标移上显示下拉   
+
+ $("#menu-down").mouseleave(function(){	
+	$(this).hide();//二级菜单默认隐藏
+  });	
+  $("#iframe").height($(window).height()-110);
+	
+})
+</script>
+
+
+	</head>
+	<body>
+	<header>
+		<img src="img/logo.png" />
+		<div>
+		<p><span class="mr10" id="now_date">2017年6月20日 星期一</span>  <span id="u_name">  admin2，您好！</span>
+				<a class="bg-red" href="javascript:void(0);" onclick="exit()"><img src="img/icon-quit.png" />退出</a>
+				<a class="bg-purp"><img src="img/icon-help.png" />帮助</a>				
+				<a class="bg-green"><img src="img/icon-set.png" />设置</a>
+				<a class="bg-blue" id="map"><img src="img/icon-map.png" />网站地图</a>
+			</p></div>
+		<div class="nav">
+				<ul id="get-menu">
+               <li class="active"><a href="index.html">首页</a></li>     
+               <li><a href="#">需求管理</a>
+                      <ul>
+                          <li><a href="#">需求收集</a></li> 
+                   </ul>
+                </li>
+              <li><a href="#">请购管理</a>
+                      <ul>
+                          <li><a href="#">请购单查询</a> </li>                           
+                          <li><a href="#">请购单创建</a> </li>     
+                    </ul>
+                </li>
+               <li><a href="#">采购寻源</a>
+                      <ul>
+                          <li><a href="#">请购池</a></li>  
+                          <li><a href="#">采购项目及采购方案</a></li>  
+                           <li><a href="#">ES执行跟踪</a></li>  
+                            <li><a href="#">采购结果</a></li>  
+                             <li><a href="#">上会池</a></li>  
+                              <li><a href="#">合同管理</a></li>  
+                             
+                    </ul>
+                </li>
+                <li><a href="#">订单管理</a>
+                      <ul>
+                          <li><a href="#">供货需求单</a> </li>  
+                            <li><a href="#">订货单查询</a> </li>  
+                              <li><a href="#">订货单创建</a> </li>  
+                                <li><a href="#">订货单执行跟踪</a> </li>  
+                                 <li><a href="#">配额管理</a> </li>                          
+                    </ul>
+                </li>
+                <li><a href="#">发货管理</a>
+                      <ul>
+                          <li><a href="#">供货通知单</a> </li>  
+                            <li><a href="#">装箱单</a> </li>  
+                              <li><a href="#">发货单</a> </li>                                                      
+                    </ul>
+                </li>
+                    <li><a href="#">接收管理</a>
+                      <ul>
+                          <li><a href="#">成本物资接收</a> </li>  
+                            <li><a href="#">费用订单接收</a> </li>  
+                              <li><a href="#">直发现场接收</a> </li>                                                      
+                    </ul>
+                </li>
+                  <li><a href="#">库存管理</a>
+                      <ul>
+                          <li><a href="#">入库单</a> </li>  
+                            <li><a href="#">物资申领</a> </li>  
+                              <li><a href="#">出库单</a> </li> 
+                               <li><a href="#">项目物资转移</a> </li> 
+                                <li><a href="#">物资调拨</a> </li> 
+                                 <li><a href="#">物资公示</a> </li> 
+                                  <li><a href="#">工程转备件</a> </li> 
+                                   <li><a href="#">工程转报废</a> </li>
+                    </ul>
+                </li>
+                 <li><a href="#">结算管理</a>
+                      <ul>
+                          <li><a href="#">订货汇总单</a> </li>  
+                            <li><a href="#">到货证明</a> </li>  
+                              <li><a href="#">无质量问题证明</a> </li> 
+                               <li><a href="#">付款申请</a> </li> 
+                                <li><a href="#">结算单</a> </li>                               
+                    </ul>
+                </li>
+                 <li><a href="#">统计报表</a>
+                      <ul>
+                          <li><a href="#">采购项目</a> </li>  
+                            <li><a href="#">工程项目</a> </li>  
+                              <li><a href="#">产品管理</a> </li> 
+                               <li><a href="#">业务单据</a> </li>                                                            
+                    </ul>
+                </li>
+                 <li><a href="#">基础资料</a>
+                      <ul>
+                          <li><a href="#">仓库维护</a> </li>  
+                            <li><a href="#">区域维护</a> </li>  
+                              <li><a href="#">子库维护</a> </li> 
+                               <li><a href="#">子库权限</a> </li>  
+                                  <li><a href="#">供应商信息</a> </li>  
+                                     <li><a href="#">合同信息</a> </li>  
+                                        <li><a href="#">物料编码</a> </li> 
+                                         <li><a href="#">流程金额设置</a> </li>  
+                    </ul>
+                </li>
+                <li><a href="#">系统管理</a>
+                      <ul>
+                          <li><a href="#">人员账户</a> </li>  
+                            <li><a href="#">组织单位</a> </li>  
+                              <li><a href="#">角色维护</a> </li> 
+                               <li><a href="#">权限维护</a> </li>                                                            
+                    </ul>
+                </li>
+                </ul>
+			</div>
+			<div id="menu-down">
+				 <dl>
+				 	<dt><a href="#">需求管理</a></dt>
+			<dd><a href="#">需求收集</a></dd>			
+		</dl>
+		<dl>
+       <dt><a href="#">请购管理</a></dt>
+			<dd><a href="#">请购单查询</a></dd>
+            <dd><a href="#">请购单创建</a></dd>
+          
+		</dl>
+          <dl>    
+           <dt><a href="#">采购寻源</a></dt>
+			<dd><a href="#">请购池</a></dd>
+            <dd><a href="#">采购项目及采购方案</a></dd>
+          <dd><a href="#">ES执行跟踪</a></dd>
+           <dd><a href="#">采购结果</a></dd>
+           <dd><a href="#">上会池</a></dd>
+            <dd><a href="#">合同管理</a></dd>
+		</dl>
+		<dl>
+             <dt><a href="#">订单管理</a></dt>	
+             <dd><a href="#">供货需求单</a></dd>
+            <dd><a href="#">订货单查询</a></dd>
+          <dd><a href="#">订货单创建</a></dd>
+           <dd><a href="#">订货单执行跟踪</a></dd>
+           <dd><a href="#">配额管理</a></dd>
+		</dl>
+			<dl>
+             <dt><a href="#">发货管理</a></dt>	
+              <dd><a href="#">供货通知单</a></dd>
+            <dd><a href="#">装箱单</a></dd>
+          <dd><a href="#">发货单</a></dd>
+         
+		</dl>
+          <dl>
+               <dt><a href="#">接收管理</a></dt>		
+             <dd><a href="#">成本物资接收</a></dd>
+            <dd><a href="#">费用订单接收</a></dd>
+          <dd><a href="#">直发现场接收</a></dd>
+ 		</dl>
+		
+     <dl>
+               <dt><a href="#">库存管理</a></dt>		
+            	  <dd><a href="#">入库单</a></dd>
+            <dd><a href="#">物资申领</a></dd>
+          <dd><a href="#">出库单</a></dd>
+          <dd><a href="#">项目物资转移</a></dd>
+          <dd><a href="#">物资调拨</a></dd>
+          <dd><a href="#">物资公示</a></dd>
+          <dd><a href="#">工程转备件</a></dd>
+           <dd><a href="#">工程转报废</a></dd>
+ 		</dl>
+ 		<dl>
+               <dt><a href="#">结算管理</a></dt>		
+            	  <dd><a href="#">订货汇总单</a></dd>
+            <dd><a href="#">到货证明</a></dd>
+          <dd><a href="#">无质量问题证明</a></dd>
+          <dd><a href="#">付款申请</a></dd>
+          <dd><a href="#">结算单</a></dd>        
+ 		</dl>	
+ 		<dl>
+               <dt><a href="#">统计报表</a></dt>		
+            	  <dd><a href="#">采购项目</a></dd>
+            <dd><a href="#">工程项目</a></dd>
+          <dd><a href="#">产品管理</a></dd>
+          <dd><a href="#">业务单据</a></dd>            
+ 		</dl>
+ 		<dl>
+               <dt><a href="#">基础资料</a></dt>		
+            	  <dd><a href="#">仓库维护</a></dd>
+            <dd><a href="#">区域维护</a></dd>
+          <dd><a href="#">子库维护</a></dd>
+          <dd><a href="#">子库权限</a></dd>   
+            <dd><a href="#">供应商信息</a></dd>
+            <dd><a href="#">合同信息</a></dd>
+          <dd><a href="#">物料编码</a></dd>
+          <dd><a href="#">流程金额设置</a></dd>   
+ 		</dl>	
+ 		<dl>
+               <dt><a href="#">系统管理</a></dt>		
+            	  <dd><a href="#">人员账户</a></dd>
+            <dd><a href="#">组织单位</a></dd>
+          <dd><a href="#">角色维护</a></dd>
+          <dd><a href="#">权限维护</a></dd>            
+ 		</dl>
+ 			</div>
+
+	</header>	
+	
+	<div class="content_box">
+		<iframe width="100%" src="../index_cont.html" frameborder="0" framespacing="0" scrolling="yes" id="iframe"></iframe>
+		
+</div>
+	<footer><span class="mr10"><b>版权所有：</b>中国移动通信集团云南有限公司</span>    <b>技术支持：</b>热线电话 028-8666666</footer>
+	</body>
+<script>
+    var HOURS;
+    var MY_WORK_BENCH;
+
+    $(document).ready(function(){
+        setLoginTime();
+        getUserName();
+        getMenu();
+    });
+
+    function getUserName()
+    {
+        $.get("/user/getusername", function(data){
+            $("#u_name").text(data+"，"+getHour());
+        });
+    }
+    function exit()
+    {
+        $.get("/user/logout", function(data){
+               window.location.href = "login.html";
+        });
+    }
+    function setLoginTime()
+    {
+        var myDate = new Date();
+        var mon=myDate.getMonth()+1;
+        var day= change_day(myDate.getDay());
+        HOURS=myDate.getHours()
+        now_date=  myDate.getFullYear()+"年"+mon+"月"+myDate.getDate()+"日 "+" 星期"+day;
+        $("#now_date").text(now_date);
+    }
+
+    function getMenu() {
+        var modelId="0,1,4,99,107,112,114,116";
+        $.post("/module/getmenu",{modelId:modelId},function(data){
+            var modelMap=data;
+            var modelHtml="";//首页菜单
+            var urlMap="";//网站地图
+            var homePage="<li class='active'><a href='index.html'>首页</a></li>"
+           if(modelMap!=null)
+           {
+               var idArray=modelId.split(',');
+               MY_WORK_BENCH=modelMap[idArray[1]];//提取x`我的工作台
+
+               for (var i = 0; i <idArray.length ; i++)
+               {
+                   var modelList=modelMap[idArray[i]];
+                   modelHtml=modelHtml+"  <li><a href=\'#\'>"+modelList[0].moduleName+"</a><ul>"
+                   urlMap=urlMap+  "<dl><dt><a href='#'>"+modelList[0].moduleName+"</a></dt>"
+                   for (var j = 0; j <modelList.length ; j++)
+                   {
+                       modelHtml=modelHtml+"<li><a href='#'>"+modelList[j].moduleName+"</a></li> "
+                       urlMap=urlMap+  "<dd><a href='#'>"+modelList[j].moduleName+"</a></dd>"
+                   }
+                   modelHtml=modelHtml+"</ul></li>";
+                   urlMap=urlMap+ "</dl>"
+               }
+           }
+            $("#get-menu").empty();
+            $("#get-menu").append(homePage+modelHtml);
+            $("#menu-down").empty();
+            $("#menu-down").append(urlMap);
+        });
+
+    }
+
+
+    function change_day(day)
+    {
+        var now_day;
+        switch (day)
+        {
+            case 0:now_day="七";  break;
+            case 1:now_day="一";  break;
+            case 2:now_day="二";  break;
+            case 3:now_day="三";  break;
+            case 4:now_day="四";  break;
+            case 5:now_day="五";  break;
+            case 6:now_day="六";  break;
+        }
+        return now_day;
+    }
+
+    function getHour()
+    {
+        var hour_desc;
+        if(HOURS<7)
+        {
+            hour_desc="凌晨好！";
+        }
+        else if(HOURS>6&&HOURS<12)
+        {
+            hour_desc="上午好！";
+        }
+        else if(HOURS==12)
+        {
+            hour_desc="中午好！";
+        }
+        else if(HOURS>12&&HOURS<19)
+        {
+            hour_desc="下午好！";
+        }
+        else if(HOURS>19)
+        {
+            hour_desc="晚上好！";
+        }
+        return hour_desc;
+    }
+</script>
+</html>
